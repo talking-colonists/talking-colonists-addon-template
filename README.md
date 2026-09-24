@@ -1,6 +1,6 @@
 # Talking Colonists Addon Template
 
-A minimal addon for [Talking Colonists](https://github.com/sshcrack/talking-colonists), the
+A minimal addon for [Talking Colonists](https://github.com/talking-colonists/talking-colonists), the
 MineColonies mod that lets you talk to citizens. Start your own addon from it.
 
 It builds for **1.21.1 NeoForge** and **1.20.1 Forge** from one source tree, using
@@ -14,7 +14,7 @@ It builds for **1.21.1 NeoForge** and **1.20.1 Forge** from one source tree, usi
 | React when a conversation starts or ends (*lifecycle events*) | `registerLifecycleListener()` |
 
 The full API reference is
-[`docs/addon-api.md`](https://github.com/sshcrack/talking-colonists/blob/main/docs/addon-api.md).
+[`docs/addon-api.md`](https://github.com/talking-colonists/talking-colonists/blob/main/docs/addon-api.md).
 
 ## Make it yours
 
