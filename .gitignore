@@ -9,6 +9,8 @@ build/
 
 run/
 
+talking-colonists-src/
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml

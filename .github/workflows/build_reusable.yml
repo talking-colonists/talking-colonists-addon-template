@@ -48,6 +48,28 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      # Addons may target a Talking Colonists version that is not released yet. Then build it from the
+      # main branch into Maven Local (local only: nothing is published).
+      - name: Check Talking Colonists dependency
+        id: tc
+        run: |
+          version=$(sed -n 's/^deps.talking_colonists_version=//p' gradle.properties)
+          url="https://maven.sshcrack.me/releases/me/sshcrack/mc_talking-api/${version}-1.21.1-neoforge/mc_talking-api-${version}-1.21.1-neoforge.pom"
+          if curl -sfI "$url" > /dev/null; then echo "released=true" >> "$GITHUB_OUTPUT"; else echo "released=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Checkout Talking Colonists
+        if: steps.tc.outputs.released == 'false'
+        uses: actions/checkout@v4
+        with:
+          repository: talking-colonists/talking-colonists
+          path: talking-colonists-src
+          fetch-depth: 1
+
+      - name: Install Talking Colonists into Maven Local
+        if: steps.tc.outputs.released == 'false'
+        working-directory: talking-colonists-src
+        run: ./gradlew :1.21.1-neoforge:publishToMavenLocal :1.20.1-forge:publishToMavenLocal --no-daemon
+
       - name: Build with Gradle
         run: ./gradlew buildAndCollect --no-daemon
 
