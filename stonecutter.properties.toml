@@ -1,0 +1,43 @@
+mod.id = "tc_addon_example"
+mod.name = "Talking Colonists Addon Template"
+mod.group = "com.example.tc_addon"
+mod.version = "0.1.0"
+mod.channel_tag = ""
+mod.description = "A minimal Talking Colonists addon: feature detection, a prompt contributor, a query tool and a lifecycle listener"
+mod.authors = ["Your Name"]
+mod.contributors = []
+mod.inception_year = "2026"
+mod.license.name = "Unlicense"
+mod.license.url = "https://unlicense.org/"
+mod.license.dist = "repo"
+mod.sources_url = "https://github.com/your-name/your-addon"
+mod.homepage_url = "https://github.com/your-name/your-addon"
+mod.issues_url = "https://github.com/your-name/your-addon/issues"
+mod.discord_url = ""
+
+[[mod.pom.developers]]
+id = "your-name"
+name = "Your Name"
+url = "https://github.com/your-name"
+
+[forge]
+
+[forge."1.20.1"]
+deps.minecraft = "1.20.1"
+deps.forge = "47.2.0"
+deps.minecolonies_version="1.20.1-1.1.1218-snapshot"
+deps.structurize_version="1.20.1-1.0.806-snapshot"
+deps.blockui_version="1.20.1-1.0.190-snapshot"
+deps.domum_version="1.20.1-1.0.288-snapshot"
+
+
+[neoforge]
+
+[neoforge."1.21.1"]
+deps.minecraft = "1.21.1"
+deps.parchment = "1.21.1:2024.11.17"
+deps.neoforge = "21.1.213"
+deps.minecolonies_version="1.1.1305-1.21.1-snapshot"
+deps.structurize_version="1.0.823-1.21.1-snapshot"
+deps.blockui_version="1.0.211-1.21.1-snapshot"
+deps.domum_version="1.0.233-snapshot"
